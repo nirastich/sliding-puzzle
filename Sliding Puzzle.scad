@@ -19,8 +19,8 @@
 //Tolerance between the pieces (mm)
 tolerance = 0.3; //[0.05:0.01:2]
 
-//Size of the entire puzzle (mm)
-size = 70; //[30:1:500]
+//Size of one Tile (mm)
+tile_size = 20; //[5:1:100]
 
 //Number of pieces
 number = 3; //[2,3,4,5,6]
@@ -41,7 +41,7 @@ font = "Arial:style=Bold"; //["Liberation Sans", "Liberation Sans:style=Bold", "
 
 // Derived
 
-tile_size   = (size - size/5) / number;
+size        = tile_size * number * 1.25;
 spacing     = tile_size + tolerance;
 rail_size   = tile_size * 0.125;
 height      = tile_size * 0.375;
