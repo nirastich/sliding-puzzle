@@ -1,6 +1,7 @@
 /*
     Sliding Puzzle Generator
     ------------------------
+    https://github.com/nirastich/sliding-puzzle
 
     by Christian Leroch
     www.Leroch.net
