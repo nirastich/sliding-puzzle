@@ -24,8 +24,6 @@ You can view or edit the code directly at the following links:
 - Fork: [https://pb.73.nu/sliding-puzzle/fork](https://pb.73.nu/sliding-puzzle/fork)
 - Preview (using https://ochafik.com): [https://pb.73.nu/sliding-puzzle/view](https://pb.73.nu/sliding-puzzle/view)
 
-No installation needed — just open in your browser.
-
 ## License
 
 This project is licensed under the  
