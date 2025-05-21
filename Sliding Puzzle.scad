@@ -32,7 +32,7 @@ depth = 0.2; //[0.01:0.01:1]
 
 //Text on the back
 custom = false;
-text = "CUSTOM:)";
+text = "C u s t o m text :)";
 
 //of the numbers
 font = "Arial:style=Bold"; //["Liberation Sans", "Liberation Sans:style=Bold", "Liberation Sans:style=Italic", "Liberation Mono", "Liberation Serif", "Arial:style=Bold"]
@@ -45,13 +45,20 @@ size        = tile_size * number * 1.25;
 spacing     = tile_size + tolerance;
 rail_size   = tile_size * 0.125;
 height      = tile_size * 0.375;
-text_size   = tile_size / 1.6;
 
 function reverse(list, n) =
     [ for (seg = [0 : n : len(list)-1])
         for (i = [min(seg+n-1, len(list)-1) : -1 : seg])
             list[i]
     ];
+
+function split_by_space(s, acc = [], word = "", i = 0) =
+    i >= len(s) ? (word == "" ? acc : concat(acc, [word])) :
+    s[i] == " " ?
+        (word == "" ?
+            split_by_space(s, acc, "", i + 1) :
+            split_by_space(s, concat(acc, [word]), "", i + 1)) :
+        split_by_space(s, acc, str(word, s[i]), i + 1);
 
 texts = [
     ["1","3","2"],
@@ -61,8 +68,8 @@ texts = [
     ["6","10","4","20","11","13","23","12","3","17","7","2","35","18","21","27","16","8","22","5","15","14","9","19","29","24","28","33","1","32","30","34","31","26","25"]
 ];
 
-text_array = [ for (i = [0 : len(text)-1]) text[i] ];
-text_r     = reverse(text_array, number);
+text_words = [for (t = split_by_space(text)) if (t != "") t];
+text_r = reverse(text_words, number);
 
 frame();
 
@@ -110,9 +117,11 @@ module segment(sn, x, y, idx) {
 }
 
 module number(n) {
+    len_n = len(str(n));
+    scaled_text_size = tile_size / ( len_n / 2 + 1 );
     translate([0,0,height/2 - depth])
         linear_extrude(height = depth+0.01)
-            text(n, size = text_size, font = font, halign = "center", valign = "center", $fn=16);
+            text(n, size = scaled_text_size, font = font, halign = "center", valign = "center", $fn=16);
 }
 
 function get_text(idx) =
