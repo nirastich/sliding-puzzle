@@ -23,6 +23,8 @@ You can view or edit the code directly at the following links:
 - Pastebin: [https://pb.73.nu/sliding-puzzle](https://pb.73.nu/sliding-puzzle)
 - Fork: [https://pb.73.nu/sliding-puzzle/fork](https://pb.73.nu/sliding-puzzle/fork)
 - Preview (using https://ochafik.com): [https://pb.73.nu/sliding-puzzle/view](https://pb.73.nu/sliding-puzzle/view)
+- Makerworld: [https://makerworld.com/models/1437772](https://makerworld.com/models/1437772)
+- Thingiverse: [https://www.thingiverse.com/thing:5353159](https://www.thingiverse.com/thing:5353159)
 
 ## License
 
